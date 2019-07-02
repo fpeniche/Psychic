@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Physic</title>
+
+    <script>
+    
+    var letterToGuess = "a";
+    $(document).on("keydown",function(event)
+    {
+        //event.key has the key pressed
+        console.log(event.key);
+
+        if(letterToGuess===event.key){
+            alert("You guessed it!");
+            wins+=1;
+            $("#wins").html(wins);
+           
+        
+        }
+        else{
+            alert("We're not in synch");
+            losses+=1;
+            $("#losses").html(losses);
+        }
+
+    });
+
+    var wins = 0;
+    var losses = 0;
+    var numberOfGuesses = 10;
+
+    
+    
+
+    </script>
+</head>
+<body>
+    <h1>Psychic Game</h1>
+    <h2>Wins: <span id="wins">0</span></h2>
+    <h2>Losses: <span id="losses">0</span></h2>
+    <h2>Guesses Left: <span id="guessleft">0</span></h2>
+    <h2>Your Guesses so far: <span id="guessfar">0</span></h2>
+
+</body>
+</html>
